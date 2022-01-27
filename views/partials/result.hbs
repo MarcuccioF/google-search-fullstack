@@ -1,0 +1,8 @@
+<div class="result">
+	<small>{{result.url}}</small>
+	<h2><a href="{{result.url}}" class="megalink">{{result.title}}</a></h2>
+	<p>{{result.description}}</p>
+	{{#each result.links as | link |}}
+		<a href="{{link.url}}" class="link">{{link.title}}</a>
+	{{/each}}
+</div>
