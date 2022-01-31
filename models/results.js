@@ -6,8 +6,14 @@ module.exports = mongoose.model('results', {
     type: String,
     required: true
   },
-  description: String,
-  url: String,
+  description: {
+    type: String,
+    required: true
+  },
+  url: {
+    type: String,
+    required: true
+  },
   links: [
     {
       title: String,

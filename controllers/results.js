@@ -2,6 +2,9 @@
 const express = require('express')
 const router = express.Router()
 // Create POST controller
+router.get('/', (req, res) => {
+  res.render('results')
+})
 
 router.post('/', (req, res) => {
   let results = [
@@ -53,8 +56,8 @@ router.post('/', (req, res) => {
   ]
   results = results.filter(
     e =>
-      e.title.includes(req.body.research) ||
-      e.description.includes(req.body.research)
+      e.title.toLowerCase().includes(req.body.research.toLowerCase()) ||
+      e.description.toLowerCase().includes(req.body.research.toLowerCase())
   )
   console.log(results)
   // res.render('results', { results })
